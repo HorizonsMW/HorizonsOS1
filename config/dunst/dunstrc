@@ -1,0 +1,130 @@
+# ~/.config/dunst/dunstrc
+# iOS-style floating "bubble" notifications for Dunst 1.13+ on Hyprland (Wayland)
+#
+# Design goals, mapped to iOS notification banners:
+#   - Small, centered pill at the top of the screen (not corner-anchored)
+#   - Large, fully rounded window + rounded "app icon"
+#   - Frameless, translucent dark background (works because Hyprland composites)
+#   - Minimal chrome: no indicator letters, no separators between stacked bubbles
+#   - Bold title / lighter body, generous padding so text doesn't feel cramped
+#
+# NOTE ON COLOR ALPHA: On Wayland, transparency comes from the alpha channel
+# in the hex color itself (8-digit hex: #RRGGBBAA), NOT the `transparency`
+# setting below (that one is X11-only and left at 0 here).
+
+[global]
+    monitor = 0
+    follow = mouse
+
+    ### Geometry — small pill, top-center, like an iOS banner ###
+    width = 380
+    height = (0, 120)
+    origin = top-center
+    offset = (0, 12)
+    scale = 0
+    notification_limit = 5
+
+    ### Progress bar — thin, fully rounded ###
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 200
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 4
+    progress_bar_corners = all
+
+    ### Icon — rounded "app icon" square (squircle-ish, not a full circle) ###
+    icon_corner_radius = 12
+    icon_corners = all
+
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 0
+    padding = 16
+    horizontal_padding = 16
+    text_icon_padding = 12
+    frame_width = 2
+    frame_color = "#00000000"
+    gap_size = 12
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+
+    ### Text ###
+    font = Inter 10
+    line_height = 3
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = end
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = no
+    enable_posix_regex = false
+
+    ### Icons ###
+    enable_recursive_icon_lookup = true
+    icon_theme = "Adwaita"
+    icon_position = left
+    min_icon_size = 48
+    max_icon_size = 48
+
+    ### History ###
+    sticky_history = yes
+    history_length = 20
+
+    ### Misc/Advanced ###
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+
+    ### Window shape — big radius = the iOS "bubble" look ###
+    corner_radius = 24
+    corners = all
+    ignore_dbusclose = false
+
+    ### Wayland ###
+    layer = overlay
+    force_xwayland = false
+
+    ### Legacy ###
+    force_xinerama = false
+
+    ### Mouse ###
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+    pause_on_mouse_over = true
+    enable_pcre_regex = false
+
+# Urgency levels keep the same translucent dark "bubble" background;
+# only timeout and the (invisible-until-critical) frame color change.
+[urgency_low]
+    background = "#1c1c1ecc"
+    foreground = "#ffffffcc"
+    frame_color = "#00000000"
+    timeout = 4
+    default_icon = dialog-information
+
+[urgency_normal]
+    background = "#1c1c1ee6"
+    foreground = "#ffffff"
+    frame_color = "#00000000"
+    timeout = 5
+    default_icon = dialog-information
+
+[urgency_critical]
+    background = "#3a1414f2"
+    foreground = "#ffffff"
+    frame_color = "#ff453a"
+    timeout = 0
+    override_pause_level = 60
+    default_icon = dialog-warning
