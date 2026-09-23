@@ -2,6 +2,10 @@
 
 A Hyprland + Noctalia desktop setup for Arch Linux (Wayland), with Dunst notifications and Swappy screenshots. Theme: "Golden Gate" — frosted glass surfaces with a warm gold accent.
 
+## Why?
+The purpose of this repo is purely to recovery my workflow in shortest time possible, especially when I break things. Hyprland and Noctalia configs were handwritten, for the most part, through their respective wikis. The Noctalia GoldenGate palletes is all AI, along with dunst config. Some entries in hyprland.lua wont work because the apps are not set up.
+
+
 **Jump to:** [Install](#install) · [What the installer does](#what-installsh-does) · [Going back](#going-back-to-your-previous-setup) · [Notifications](#notifications-dunst-vs-noctalia) · [Keybinds](#keybinds)
 
 ## What's included
@@ -16,21 +20,21 @@ A Hyprland + Noctalia desktop setup for Arch Linux (Wayland), with Dunst notific
 The Hyprland config uses the Lua format introduced in Hyprland 0.55, and the Noctalia config targets Noctalia v5+ (`config.toml`).
 
 ## Requirements
-
+You already have Hyprland and Noctalia Desktop Shell v5+ at this point, anyway...I'll refine this later
 ```bash
-sudo pacman -S --needed hyprland dunst libnotify swappy grim slurp wl-clipboard \
+sudo pacman -S --needed hyprland noctalia dunst libnotify swappy grim slurp wl-clipboard \
     kitty nautilus wofi hyprpaper hyprpolkitagent udiskie blueman \
     brightnessctl playerctl wireplumber flatpak
 ```
 
-Plus [Noctalia](https://docs.noctalia.dev) (AUR). The Hyprland config also launches Zen Browser, Mission Center and EasyEffects via Flatpak, and ProtonVPN — remove those lines from `hyprland.lua` if you don't use them.
+[Noctalia](https://docs.noctalia.dev/noctalia/) (pacman). The Hyprland config also launches Zen Browser, Mission Center and EasyEffects via Flatpak, and ProtonVPN — remove those lines from `hyprland.lua` if you don't use them.
 
 What the extra packages are for: `wl-clipboard` (screenshot-to-clipboard), `brightnessctl` (brightness keys), `playerctl` (media keys), `wireplumber` (provides `wpctl` for volume keys). Optional: `hyprshutdown` — `Super+M` uses it if installed, otherwise it exits Hyprland directly.
 
 ## Install
 
 ```bash
-git clone https://github.com/<you>/HorizonsOS1.git
+git clone https://github.com/HorizonsMW/HorizonsOS1.git
 cd HorizonsOS1
 ./install.sh
 ```
