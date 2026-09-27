@@ -230,7 +230,7 @@ Defined in `config/hypr/hyprland.lua`. **`Super`** is the main modifier (the Win
 | `Super + S`                   | Show / hide the scratchpad (special workspace `magic`)      |
 | `Super + Shift + S`           | Send the active window to the scratchpad                    |
 
-Workspaces 1–5 and 7–9 are persistent on `eDP-1`, named: 1 `web`, 2 `tasks`, 3 `chat`, 4 `game`, and 5, 7, 8, 9 `code`. Workspaces 6 and 10 are created on demand.
+Workspaces 1–4 are persistent on `eDP-1`, named: 1 `web`, 2 `tasks`, 3 `code`, and 4 `game`. Workspaces 5 to 10 are created on demand.
 
 ### Screenshots
 

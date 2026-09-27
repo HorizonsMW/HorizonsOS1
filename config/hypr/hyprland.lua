@@ -182,12 +182,8 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 -- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
 hl.workspace_rule({ workspace = "1", monitor = "eDP-1", persistent = true, default_name = "web" })
 hl.workspace_rule({ workspace = "2", monitor = "eDP-1", persistent = true, default_name = "tasks" })
-hl.workspace_rule({ workspace = "3", monitor = "eDP-1", persistent = true, default_name = "chat" })
+hl.workspace_rule({ workspace = "3", monitor = "eDP-1", persistent = true, default_name = "code" })
 hl.workspace_rule({ workspace = "4", monitor = "eDP-1", persistent = true, default_name = "game" })
-hl.workspace_rule({ workspace = "5", monitor = "eDP-1", persistent = true, default_name = "code" })
-hl.workspace_rule({ workspace = "7", monitor = "eDP-1", persistent = true, default_name = "code" })
-hl.workspace_rule({ workspace = "8", monitor = "eDP-1", persistent = true, default_name = "code" })
-hl.workspace_rule({ workspace = "9", monitor = "eDP-1", persistent = true, default_name = "code" })
 
 -- hl.window_rule({
 --     name  = "no-gaps-wtv1",
