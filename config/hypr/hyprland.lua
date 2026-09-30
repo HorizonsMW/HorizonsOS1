@@ -182,7 +182,7 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 -- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
 hl.workspace_rule({ workspace = "1", monitor = "eDP-1", persistent = true, default_name = "web" })
 hl.workspace_rule({ workspace = "2", monitor = "eDP-1", persistent = true, default_name = "tasks" })
-hl.workspace_rule({ workspace = "3", monitor = "eDP-1", persistent = true, default_name = "code" })
+hl.workspace_rule({ workspace = "3", monitor = "eDP-1", persistent = true, default_name = "chat" })
 hl.workspace_rule({ workspace = "4", monitor = "eDP-1", persistent = true, default_name = "game" })
 
 -- hl.window_rule({
@@ -334,10 +334,18 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(zen))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(shiftMod .. " + CTRL + ESCAPE", hl.dsp.exec_cmd(systemMonitor))
 -- commented to use noctalia hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("swaylock"), { locked = true })
 
 
+-- Move current workspace to monitor on the right
+hl.bind(mainMod .. " + ALT + Right", function()
+    hl.dispatch(hl.dsp.workspace.move({ workspace = current, monitor = "r" }))
+end)
+
+-- Move current workspace to monitor on the left
+hl.bind(mainMod .. " + ALT + Left", function()
+    hl.dispatch(hl.dsp.workspace.move({ workspace = current, monitor = "l" }))
+end)
 
 -- remove these two lines entirely:
 -- hl.bind("switch:Lid Switch", hl.dsp.exec_cmd("swaylock"), { locked = true })
@@ -506,4 +514,3 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
-
