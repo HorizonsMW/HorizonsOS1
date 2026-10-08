@@ -229,6 +229,8 @@ Defined in `config/hypr/hyprland.lua`. **`Super`** is the main modifier (the Win
 | 3-finger swipe left / right   | Switch workspace (touchpad)                                 |
 | `Super + S`                   | Show / hide the scratchpad (special workspace `magic`)      |
 | `Super + Shift + S`           | Send the active window to the scratchpad                    |
+| `Super + Alt + Right`         | Move current workspace to monitor on the right              |
+| `Super + Alt + Left`          | Move current workspace to monitor on the left               |
 
 Workspaces 1–4 are persistent on `eDP-1`, named: 1 `web`, 2 `tasks`, 3 `code`, and 4 `game`. Workspaces 5 to 10 are created on demand.
 
